@@ -23,7 +23,7 @@ always@ (posedge clk)
 	
 	begin
 		counter = counter+1;
-		if (counter ==2)
+		if (counter == 1)
 			begin
 				clk_25 = ~clk_25;
 				counter = 0;
@@ -57,9 +57,10 @@ end
 assign vga_hsy=vgah;
 assign vga_vsy=vgav;
 
+
 always@ (posedge clk_25)
 	begin
-		if (x_counter > 0 && x_counter < 100 && y_counter > 0 && y_counter < 100)
+		if (x_counter > 150 && x_counter < 300 && y_counter > 40 && y_counter < 160)
 		begin
 			vga_red = 1;
 		end
